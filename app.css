@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    //border: 1px solid black;
+}
+
+:root {
+
+    /*Colors  */
+
+    --Moderate-violet: hsl(263, 55%, 52%);
+    --Very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --Very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+
+    /*Neutral  */
+
+    --Light-gray: hsl(0, 0%, 81%);
+    --Light-grayish-blue: hsl(210, 46%, 95%);
+
+    --Verified-graduate-color: hsl(0, 0%, 100%, 50%);
+    --Review-paragraph-color: hsl(0, 0%, 100%, 70%);
+
+}
+
+body {
+    font-family: "Barlow Semi Condensed", serif;
+    background-color: var(--Light-grayish-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.name-and-verified {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    position: relative;
+    /* Ensure the name is positioned above the background image */
+}
+
+/*Note for text colors:   */
+.white {
+    color: hsl(0, 0%, 100%);
+}
+
+.white-fiftypercent {
+    color: hsl(0, 0%, 50%);
+}
+
+.white-seventypercent {
+    color: hsl(0, 0%, 70%)
+}
+
+.grayish-blue {
+    color: #48556A;
+}
+
+.grayish-blueFiftypercent {
+    color: #48556A;
+    opacity: 50%;
+}
+
+.grayish-blueSeventypercent {
+    color: #48556A;
+    opacity: 70%;
+}
+
+
+/*Defining the grid areas*/
+.Daniel {
+    grid-area: daniel;
+    background-color: var(--Moderate-violet);
+    position: relative;
+}
+
+.Jonathan {
+    grid-area: jonathan;
+    background-color: var(--Very-dark-grayish-blue);
+}
+
+.Jeanette {
+    grid-area: jeanette;
+    background-color: var(--White);
+}
+
+.Patrick {
+    grid-area: patrick;
+    background-color: var(--Very-dark-blackish-blue);
+}
+
+.Kira {
+    grid-area: kira;
+    background-color: var(--White);
+}
+
+.container {
+    display: grid;
+    height: 100vh;
+    gap: 24px;
+    margin: 100px;
+
+    /* Creating 5 rows and the 1st and 4th row expands as much as it can */
+    grid-template-rows: 1fr auto auto 1fr auto;
+
+    /* Defining the template */
+    grid-template-areas:
+        "daniel"
+        "jonathan"
+        "jeanette"
+        "patrick"
+        "kira";
+
+}
+
+.cards {
+    position: relative;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.cards .image-and-title {
+    display: flex;
+    align-items: center;
+}
+
+.cards .image-and-title img {
+    border-radius: 50%;
+    margin-right: 20px;
+    width: 28px;
+}
+
+.purpleBoarder {
+    border: 2px solid #A775F1;
+}
+
+.cards .quotesPicture {
+    position: absolute;
+    right: 50px;
+    top: 0px;
+    width: 104px;
+    z-index: 0;
+    /* Keep the image behind the text */
+}
+
+.name {
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.verified {
+    font-size: 11px;
+    font-weight: 500;
+}
+
+.cards .quote {
+    margin: 10px 0 20px 0;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.5rem;
+    z-index: 1;
+    position: relative;
+    /* Ensure the quote is positioned above the background image */
+}
+
+.cards .review {
+    font-size: 13px;
+}
+
+.attribution {
+    font-size: 11px;
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 100%;
+    text-align: center;
+    z-index: 10;
+    background-color: white;
+    padding: 5px 0;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+
+@media (min-width: 768px) {
+
+    .container {
+
+        /* Creating 2 rows */
+        grid-template-rows: 1fr 1fr;
+
+        /* Defining the template (2 columns) */
+        grid-template-areas:
+            "daniel  jonathan"
+            "jeanette patrick"
+            "kira kira";
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .container {
+        display: grid;
+        //max-width: 1110px;
+        //max-width: 1200px;
+
+        /* Creating 5 rows and the 1st and 4th row expands as much as it can */
+        //grid-template-rows: 1fr auto auto 1fr auto;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+
+        grid-template-columns: repeat(4, 1fr);
+
+        /* Defining the template (4 columns) */
+        grid-template-areas:
+            "daniel daniel jonathan kira"
+            "jeanette patrick patrick kira";
+    }
+
+    .image-and-title,
+    .review {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .cards .quote {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+}
