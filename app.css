@@ -99,6 +99,10 @@ body {
     background-color: var(--White);
 }
 
+.Kira .review {
+    margin-top: -10px;
+}
+
 .container {
     display: grid;
     gap: 24px 30px;
@@ -124,6 +128,9 @@ body {
     position: relative;
     padding: 20px;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    //justify-content: center;
 }
 
 .cards .image-and-title {
@@ -173,6 +180,7 @@ body {
 
 .cards .review {
     font-size: 13px;
+    //font-weight: 500;
 }
 
 .attribution {
@@ -217,8 +225,8 @@ body {
 
 
         /* Creating 5 rows and the 1st and 4th row expands as much as it can */
-        //grid-template-rows: 1fr auto auto 1fr auto;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr auto auto 1fr auto;
+        //grid-template-rows: 1fr 1fr 1fr 1fr;
 
         grid-template-columns: repeat(4, 1fr);
 
