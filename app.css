@@ -225,12 +225,6 @@ body {
         display: grid;
         max-width: 1110px;
 
-
-        /* Creating 5 rows and the 1st and 4th row expands as much as it can */
-        //grid-template-rows: 1fr auto auto 1fr auto;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-
         grid-template-columns: repeat(4, 1fr);
 
         /* Defining the template (4 columns) */
