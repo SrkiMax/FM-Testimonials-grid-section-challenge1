@@ -106,7 +106,7 @@ body {
 .container {
     display: grid;
     gap: 24px 30px;
-    height: 65vh;
+    height: 90vh;
     //margin: auto;
 
 
@@ -126,7 +126,7 @@ body {
 
 .cards {
     position: relative;
-    padding: 15px;
+    padding: 17px;
     border-radius: 10px;
 
 }
@@ -202,6 +202,7 @@ body {
 @media (min-width: 768px) {
 
     .container {
+        height: 62vh;
 
         /* Creating 2 rows */
         grid-template-rows: 1fr 1fr;
@@ -219,12 +220,12 @@ body {
     .container {
         display: grid;
         max-width: 1110px;
-        //max-width: 1200px;
 
 
         /* Creating 5 rows and the 1st and 4th row expands as much as it can */
-        grid-template-rows: 1fr auto auto 1fr auto;
-        //grid-template-rows: 1fr 1fr 1fr 1fr;
+        //grid-template-rows: 1fr auto auto 1fr auto;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
 
         grid-template-columns: repeat(4, 1fr);
 
